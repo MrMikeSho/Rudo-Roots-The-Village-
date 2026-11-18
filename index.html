@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rudo Roots – The Village</title>
+<meta name="description" content="Jobs, housing and community support for single parents across Harare, Bulawayo and Mutare.">
+<meta name="theme-color" content="#c2570c">
+<style>
+:root{--brand:#c2570c;--brand-d:#8f3d08;--ink:#111827;--mut:#4b5563;--bg:#fdfaf7;--card:#fff;--line:#e5e7eb;--dark:#111827}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(253,250,247,.92);backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#d4620f,#8f3d08);display:grid;place-items:center;color:#fff}
+.brand b{display:block;font-size:20px;line-height:1.1}.brand span{font-size:14px;color:#6b7280}
+.burger{margin-left:auto;background:none;border:0;font-size:28px;cursor:pointer;padding:6px 10px}
+#menu{display:none;background:var(--dark);color:#fff;padding:24px 20px 32px}
+#menu.open{display:block}
+#menu div{max-width:1100px;margin:auto;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+#menu h4{margin:0 0 8px;font-size:18px}#menu a{display:block;padding:6px 0;color:#d1d5db;text-decoration:none}
+main,.wrap{max-width:1100px;margin:auto;padding:0 16px}
+.hero{text-align:center;padding:40px 0 20px}
+.hero h1{font-size:clamp(36px,8vw,56px);margin:0 0 12px;letter-spacing:-1px}
+.hero p{font-size:19px;color:var(--mut);max-width:560px;margin:auto}
+.panel{background:var(--card);border-radius:24px;padding:20px;box-shadow:0 8px 30px rgba(0,0,0,.07);margin:28px 0}
+.search{width:100%;padding:14px 16px;font-size:16px;border:1px solid #d1d5db;border-radius:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chip{border:0;background:#f3f4f6;padding:12px 20px;border-radius:999px;font-size:16px;cursor:pointer;font-weight:500}
+.chip.on{background:#d95d0b;color:#fff}.chip.dark.on{background:var(--dark)}
+.btn{display:inline-block;border:0;background:#d95d0b;color:#fff;padding:14px 22px;border-radius:12px;font-size:17px;font-weight:600;cursor:pointer;text-decoration:none}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.cat{background:#fff;border:2px solid #e5e7eb;border-radius:20px;padding:18px;cursor:pointer;text-align:left;font:inherit}
+.cat .ic,.ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;font-size:26px;margin-bottom:10px}
+.cat b{font-size:19px;display:block}.cat small{color:var(--mut);font-size:16px}
+.jobs{background:linear-gradient(135deg,#3b82f6,#6366f1)}.housing{background:linear-gradient(135deg,#10b981,#22c55e)}.community{background:linear-gradient(135deg,#a855f7,#7c3aed)}
+.list{display:grid;gap:18px;margin-top:24px}
+.card{background:#fff;border-radius:22px;padding:20px;box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.card .top{display:flex;gap:14px}.card h3{margin:0 0 8px;font-size:21px}
+.tag{display:inline-block;padding:4px 12px;border-radius:8px;color:#fff;font-size:14px;font-weight:600;margin-right:6px}
+.t-jobs{background:#3b82f6}.t-housing{background:#22c55e}.t-community{background:#a855f7}
+.c-Harare{background:#f97316}.c-Bulawayo{background:#e11d48}.c-Mutare{background:#14b8a6}
+.card p{color:var(--mut);margin:12px 0}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.price{color:#16a34a;font-weight:700}.phone{color:var(--brand);font-weight:700;text-decoration:none;font-size:18px}
+.count{text-align:center;color:#9ca3af;margin:20px 0}
+section.band{padding:56px 0}.center{text-align:center}
+.pill{display:inline-block;background:var(--brand);color:#fff;padding:8px 18px;border-radius:10px;font-weight:600}
+h2{font-size:clamp(30px,6vw,44px);margin:16px 0 8px;letter-spacing:-.5px}.sub{color:var(--mut);font-size:19px}
+.news{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:28px;text-align:left}
+.ncard{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.07)}
+.nimg{height:180px;position:relative;background:linear-gradient(135deg,#f59e0b,#b45309)}
+.nimg .a{position:absolute;top:14px;left:14px;background:rgba(75,85,99,.85);color:#fff;padding:5px 12px;border-radius:8px;font-size:14px;font-weight:600}
+.nimg .b{position:absolute;top:14px;right:14px;background:#fff;padding:5px 12px;border-radius:8px;font-size:14px;font-weight:600}
+.nbody{padding:20px}.date{color:#6b7280;font-size:15px}.nbody h3{font-size:22px;margin:8px 0}.nbody p{color:var(--mut)}
+.nbody a{color:#e11d48;font-weight:600;text-decoration:none}
+.support{background:linear-gradient(160deg,#1f2937,#0b0f19);color:#fff;padding:60px 0}
+.support .sub{color:#d1d5db}
+.sgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:30px}
+.scard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px;text-align:center}
+.scard.left{text-align:left}.scard h3{margin:10px 0 6px;font-size:24px}.scard p{color:#d1d5db;margin:0 0 18px}
+.scard .btn{display:block;width:100%;text-align:center}
+.b-call{background:linear-gradient(90deg,#f43f5e,#f97316)}.b-wa{background:linear-gradient(90deg,#22c55e,#14b8a6)}.b-mail{background:linear-gradient(90deg,#a855f7,#6366f1)}
+.sic{width:72px;height:72px;margin:0 auto;border-radius:20px;display:grid;place-items:center;font-size:32px}
+.stats{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:30px}
+.stat{background:#fff;border-radius:22px;padding:28px;box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.stat .ic{margin:0 auto 10px;border-radius:50%;width:70px;height:70px}.stat b{font-size:46px;display:block}.stat span{color:var(--mut);font-size:18px}
+.join{background:linear-gradient(135deg,#c2570c,#7c3a0a);color:#fff;border-radius:28px;padding:48px 24px;text-align:center;margin:40px 0}
+.join p{font-size:19px;max-width:520px;margin:0 auto 24px}.join .btn{background:#fff;color:var(--brand);margin:6px}
+.join .btn.o{background:none;border:1px solid #fff;color:#fff}
+footer{background:#111827;color:#d1d5db;padding:50px 0 30px;margin-top:50px}
+footer .g{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer h4{color:#fff;font-size:20px;margin:0 0 10px}footer a{display:block;color:#d1d5db;text-decoration:none;padding:5px 0}
+footer .c{text-align:center;border-top:1px solid #243044;margin-top:30px;padding-top:24px}
+dialog{border:0;border-radius:22px;padding:24px;width:min(520px,94vw);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog label{display:block;margin:12px 0 4px;font-weight:600}
+dialog input,dialog select,dialog textarea{width:100%;padding:12px;font:inherit;border:1px solid #d1d5db;border-radius:10px}
+.msg{margin-top:12px;color:#16a34a;font-weight:600}
+
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.25s;z-index:40}
+#scrim.on{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;height:100%;width:min(320px,82vw);background:#111a2e;color:#fff;z-index:50;transform:translateX(100%);transition:.3s;padding:24px 20px;display:flex;flex-direction:column}
+#drawer.on{transform:none}
+#drawer .x{align-self:flex-end;background:none;border:1px solid #cbd5e1;color:#fff;border-radius:10px;width:40px;height:40px;font-size:18px;cursor:pointer}
+#drawer nav{margin-top:20px;border-top:1px solid #243044}
+#drawer nav a{display:flex;gap:14px;align-items:center;padding:20px 4px;font-size:21px;font-weight:600;color:#fff;text-decoration:none;cursor:pointer}
+#drawer .emerg{margin-top:12px;background:linear-gradient(90deg,#d4620f,#8f3d08);text-align:center;padding:16px;border-radius:12px;color:#fff;text-decoration:none;font-weight:700;font-size:19px}
+.vhero{position:relative;min-height:640px;display:grid;place-items:center;text-align:center;color:#fff;padding:60px 18px;background:radial-gradient(circle at 20% 20%,#b45309 0,transparent 55%),radial-gradient(circle at 85% 80%,#7c2d12 0,transparent 55%),linear-gradient(160deg,#2b1a10,#4a2410 55%,#1b130d)}
+.vhero{grid-template-columns:minmax(0,1fr)}.vhero .in{max-width:680px;width:100%;min-width:0}.vhero h1 em{overflow-wrap:anywhere}
+.vhero .pillw{display:inline-block;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);padding:12px 26px;border-radius:999px;font-weight:600;font-size:18px}
+.vhero h1{margin:26px 0 8px;font-size:clamp(30px,6vw,46px);font-weight:600}
+.vhero h1 em{display:block;font-style:normal;font-weight:800;font-size:clamp(40px,10vw,84px);line-height:1.05;background:linear-gradient(90deg,#e0711c,#f3b27a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vhero p{font-size:21px;margin:22px 0 30px;color:#f1e4d8}
+.vsearch{display:flex;gap:8px;background:#fff;border-radius:18px;padding:10px;max-width:560px;margin:auto}
+.vsearch input{flex:1;border:0;font-size:17px;padding:10px;outline:0;min-width:0;background:transparent}
+.vsearch button{border:0;background:var(--brand);color:#fff;border-radius:12px;padding:0 22px;font-weight:700;font-size:17px;cursor:pointer}
+.vbtns{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:24px}
+.vbtns .btn{min-width:260px;text-align:center;padding:18px 28px}
+.glance{padding:56px 0}.glance h2{color:var(--brand);text-align:center}
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+@media(min-width:760px){.g4{grid-template-columns:repeat(4,1fr)}}
+.gc{background:#fff;border-radius:22px;padding:22px;box-shadow:0 6px 22px rgba(0,0,0,.07)}
+.gc.pink{background:#fdeaf0}
+.gc .ic{width:62px;height:62px;border-radius:16px;font-size:28px}
+.gc b{display:block;font-size:48px;line-height:1.1;margin:8px 0 4px}
+.gc span{letter-spacing:1px;font-weight:700;color:#4b5563;font-size:14px;text-transform:uppercase}
+.eyebrow{display:inline-block;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.08);color:#b45309;font-weight:800;padding:12px 34px;border-radius:999px;letter-spacing:.5px;text-transform:uppercase}
+.eyebrow.soft{background:#f8e7da;box-shadow:none;color:#c2570c}
+.h2o{color:var(--brand)}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;text-align:left}
+@media(min-width:760px){.qgrid{grid-template-columns:repeat(4,1fr)}}
+.qc{display:block;background:#fff;border-radius:22px;padding:22px;box-shadow:0 6px 22px rgba(0,0,0,.07);text-decoration:none;cursor:pointer;border:0;font:inherit;text-align:left;color:inherit}
+.qc .ic{width:62px;height:62px;border-radius:16px;font-size:28px}
+.qc b{display:block;font-size:22px;margin:4px 0 6px;line-height:1.25}.qc small{font-size:17px;color:var(--mut)}
+.hub{display:grid;gap:18px;margin-top:30px;text-align:left}
+@media(min-width:760px){.hub{grid-template-columns:repeat(2,1fr)}}
+.hc{background:#fff;border-radius:26px;padding:28px;box-shadow:0 6px 22px rgba(0,0,0,.06);cursor:pointer;text-decoration:none;color:inherit;border:0;font:inherit;text-align:left;display:block}
+.hc .ic{width:72px;height:72px;border-radius:20px;font-size:32px}
+.hc h3{font-size:26px;margin:14px 0 8px}.hc p{font-size:19px;color:var(--mut);margin:0 0 14px}.hc .ex{color:var(--brand);font-weight:700}
+.hc:hover,.qc:hover{transform:translateY(-2px);transition:.15s}
+.g-help{background:linear-gradient(135deg,#f43f5e,#ec4899)}.g-gather{background:linear-gradient(135deg,#a855f7,#8b5cf6)}.g-don{background:linear-gradient(135deg,#10b981,#22c55e)}.g-swap{background:linear-gradient(135deg,#f59e0b,#fb923c)}.g-res{background:linear-gradient(135deg,#6366f1,#3b82f6)}.g-mem{background:linear-gradient(135deg,#f97316,#ef4444)}.g-upd{background:linear-gradient(135deg,#14b8a6,#38bdf8)}.g-emg{background:linear-gradient(135deg,#b91c1c,#7f1d1d)}.g-mkt{background:linear-gradient(135deg,#ef4444,#be123c)}.g-cal{background:linear-gradient(135deg,#a855f7,#ec4899)}.g-people{background:linear-gradient(135deg,#f97316,#f59e0b)}
+#board .post{border-top:1px solid #e5e7eb;padding:12px 0}#board .post b{display:block}
+#board .post small{color:#6b7280}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes glow{0%,100%{opacity:.25;transform:scale(1)}50%{opacity:.55;transform:scale(1.15)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(217,93,11,.45)}70%{box-shadow:0 0 0 16px rgba(217,93,11,0)}}
+.vhero{overflow:hidden;background-color:#2b1a10}
+.vhero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover;animation:kenburns 18s ease-in-out infinite alternate;opacity:.55}
+.vhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,8,.35),rgba(20,12,8,.8))}
+.vhero .in{position:relative;z-index:2}
+.vhero .pillw,.vhero h1,.vhero p,.vhero .vsearch,.vhero .vbtns,.vhero .hstats{opacity:0;animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) forwards}
+.vhero .pillw{animation-delay:.1s}.vhero h1{animation-delay:.25s}.vhero p{animation-delay:.45s}.vhero .vsearch{animation-delay:.6s}.vhero .vbtns{animation-delay:.75s}.vhero .hstats{animation-delay:.95s}
+.vhero .pillw{backdrop-filter:blur(6px)}
+.vbtns .btn{transition:transform .2s,box-shadow .2s}.vbtns .btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.vbtns .btn:first-child{animation:none}
+.vbtns .glass{background:rgba(255,255,255,.88);color:#444}
+.vbtns .btn .ar{display:inline-block;transition:transform .2s}.vbtns .btn:hover .ar{transform:translateX(5px)}
+.hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
+.hstats div{background:rgba(255,255,255,.16);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px 6px}
+.hstats b{display:block;font-size:28px;line-height:1.1}.hstats small{font-size:12px;letter-spacing:1px;font-weight:700;opacity:.9}
+header{transition:box-shadow .3s,background .3s}header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.logo{animation:pulse 3.2s infinite}
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.gc,.qc,.hc,.card,.ncard,.scard,.stat,.cat{transition:transform .25s,box-shadow .25s,background .25s,opacity .7s,transform .7s}
+.gc:hover,.qc:hover,.hc:hover,.card:hover,.ncard:hover,.scard:hover,.stat:hover,.cat:hover{transform:translateY(-6px)!important;box-shadow:0 16px 38px rgba(0,0,0,.14)}
+.gc:first-child:hover{background:#f6efff}.qc:hover{background:#fdf2f4}
+.qc .ic,.hc .ic,.gc .ic,.stat .ic,.sic{transition:transform .3s}.qc:hover .ic,.hc:hover .ic,.gc:hover .ic,.stat:hover .ic{transform:scale(1.12) rotate(-5deg)}
+.sic{animation:floaty 4s ease-in-out infinite}.stat .ic{animation:floaty 5s ease-in-out infinite}
+.hc{position:relative;overflow:hidden}
+.hc::after{content:"";position:absolute;right:-20px;top:18px;width:62%;height:64px;background:var(--glow,transparent);filter:blur(30px);opacity:.3;animation:glow 4.5s ease-in-out infinite;pointer-events:none}
+.hub .hc:nth-child(1){--glow:#f43f5e}.hub .hc:nth-child(2){--glow:#a855f7}.hub .hc:nth-child(3){--glow:#22c55e}.hub .hc:nth-child(4){--glow:#f59e0b}.hub .hc:nth-child(5){--glow:#6366f1}.hub .hc:nth-child(6){--glow:#f97316}.hub .hc:nth-child(7){--glow:#14b8a6}.hub .hc:nth-child(8){--glow:#ef4444}
+.hc .ex{display:inline-block;transition:transform .2s}.hc:hover .ex{transform:translateX(6px)}
+#quick{background-image:radial-gradient(#f0c9ac 1.4px,transparent 1.6px);background-size:46px 46px;background-color:#fbfaf8}
+.nimg{overflow:hidden}.nimg::before{content:"";position:absolute;inset:0;background:var(--img,none) center/cover;transition:transform .6s}.ncard:hover .nimg::before{transform:scale(1.08)}
+.nimg .a,.nimg .b{z-index:2}
+.nimg.c-resources{background:linear-gradient(135deg,#0ea5e9,#1d4ed8)}.nimg.c-events{background:linear-gradient(135deg,#a855f7,#6d28d9)}.nimg.c-support{background:linear-gradient(135deg,#f97316,#b45309)}.nimg.c-jobs{background:linear-gradient(135deg,#10b981,#047857)}.nimg.c-housing{background:linear-gradient(135deg,#f59e0b,#b45309)}.nimg.c-community{background:linear-gradient(135deg,#ec4899,#9d174d)}
+.refresh{margin-top:6px;border:2px solid var(--brand);color:var(--brand);background:#fff;padding:12px 24px;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer}
+.refresh.spin span{display:inline-block;animation:spin .8s linear infinite}
+.note{color:#9ca3af;margin:30px 0 14px}
+.join{background-size:200% 200%;animation:gradmove 8s ease infinite}
+@keyframes gradmove{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.vhero .pillw,.vhero h1,.vhero p,.vhero .vsearch,.vhero .vbtns,.vhero .hstats{opacity:1}}
+
+/* ===== SPOTLIGHT (card nearest screen centre) + extras ===== */
+.hc{background:#fff}
+.qgrid>:nth-child(1){--t:#fdeceb}.qgrid>:nth-child(2){--t:#f6ecfd}.qgrid>:nth-child(3){--t:#e6f7ef}.qgrid>:nth-child(4){--t:#fff1e0}.qgrid>:nth-child(5){--t:#eeeafd}.qgrid>:nth-child(6){--t:#ffeee3}.qgrid>:nth-child(7){--t:#e3f6f3}.qgrid>:nth-child(8){--t:#f3e7ea}
+.hub>:nth-child(1){--t:#fdeaf0}.hub>:nth-child(2){--t:#f3ecff}.hub>:nth-child(3){--t:#e6f7ef}.hub>:nth-child(4){--t:#fff1e0}.hub>:nth-child(5){--t:#ecebfd}.hub>:nth-child(6){--t:#ffeee3}.hub>:nth-child(7){--t:#e0f6f4}.hub>:nth-child(8){--t:#fde8ea}
+.g4>:nth-child(1){--t:#f1ebfe}.g4>:nth-child(2){--t:#fdeaf0}.g4>:nth-child(3){--t:#e3f7ee}.g4>:nth-child(4){--t:#fff1e0}
+.qc,.gc,.hc,.card,.ncard{transition:background .5s,box-shadow .5s,transform .25s,opacity .7s}
+.qc.active{background:linear-gradient(135deg,var(--t),#fff 85%)}
+.gc.active{background:linear-gradient(135deg,var(--t),#fff 85%);box-shadow:0 14px 34px rgba(0,0,0,.12)}
+.qc.active,.hc.active,.card.active,.ncard.active{box-shadow:0 14px 34px rgba(0,0,0,.12)}
+.hc.active{background:linear-gradient(135deg,var(--t),#fff 75%)}
+.hc h3,.card h3,.nbody h3{transition:color .4s}
+.hc.active h3,.hc:hover h3,.card.active h3{color:var(--brand)}
+.ncard.active .nbody h3{color:#e11d48}
+.hc::after{animation:none;opacity:0;transition:opacity .5s}
+.hc.active::after{opacity:.5;animation:glow 4.5s ease-in-out infinite}
+.hc .ex{max-height:0;opacity:0;overflow:hidden;display:block;transition:max-height .4s,opacity .4s,transform .2s}
+.hc.active .ex,.hc:hover .ex{max-height:34px;opacity:1}
+.cat.sel{border-color:var(--brand);box-shadow:0 0 0 3px rgba(217,93,11,.18),0 10px 26px rgba(0,0,0,.08)}
+/* hero particles + scroll fade */
+.pts{position:absolute;inset:0;overflow:hidden;z-index:1;pointer-events:none}
+.pts i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:rgba(255,235,210,.7);animation:drift var(--tm) ease-in-out infinite;animation-delay:var(--dl)}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.15}50%{transform:translate(var(--dx),-46px);opacity:.75}}
+.vhero .in{opacity:var(--ho,1);transform:translateY(var(--hy,0px)) scale(var(--hs,1));will-change:opacity,transform}
+/* drawer items slide in */
+#drawer nav a,#drawer .emerg{opacity:0;transform:translateX(28px);transition:opacity .4s,transform .4s}
+#drawer.on nav a,#drawer.on .emerg{opacity:1;transform:none}
+#drawer.on nav a:nth-child(1){transition-delay:.12s}#drawer.on nav a:nth-child(2){transition-delay:.2s}#drawer.on nav a:nth-child(3){transition-delay:.28s}#drawer.on nav a:nth-child(4){transition-delay:.36s}#drawer.on .emerg{transition-delay:.46s}
+@media(prefers-reduced-motion:reduce){.pts{display:none}.hc .ex{max-height:34px;opacity:1}#drawer nav a,#drawer .emerg{opacity:1;transform:none}.vhero .in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="top">
+  <div class="bar">
+    <div class="logo">📍</div>
+    <div class="brand"><b>Rudo Roots</b><span>The Village</span></div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+  
+</header>
+<div id="scrim"></div>
+<aside id="drawer" aria-label="Menu">
+  <button class="x" id="dclose" aria-label="Close">✕</button>
+  <nav>
+    <a href="#top">🏠 Home</a>
+    <a href="#news">📰 Village Updates</a>
+    <a data-board="gathering">📅 Parenting Gatherings</a>
+    <a data-board="help">⚠️ Support Requests</a>
+  </nav>
+  <a class="emerg" href="#support">📞 Emergency Support</a>
+</aside>
+
+
+<section class="vhero">
+  <div class="pts" id="pts"></div>
+  <div class="in">
+    <span class="pillw">✨ Single Parent Community</span>
+    <h1>Welcome to<em>The Village: Rudo Roots</em></h1>
+    <p>It takes a village to raise a child.</p>
+    <form class="vsearch" id="vsearch"><span style="align-self:center;padding-left:8px">🔍</span><input id="vq" placeholder="Search for services, people, listings..."><button>Search</button></form>
+    <div class="vbtns"><a class="btn" href="#join">Join the Village <span class="ar">→</span></a><a class="btn glass" href="#stats">📍 Our Community</a></div>
+    <div class="hstats"><div><b data-count="500" data-suffix="+">500+</b><small>MEMBERS</small></div><div><b data-count="120" data-suffix="+">120+</b><small>EVENTS HOSTED</small></div><div><b data-count="300" data-suffix="+">300+</b><small>FAMILIES HELPED</small></div></div>
+  </div>
+</section>
+
+<section class="glance"><div class="wrap center">
+  <h2>Community at a Glance</h2>
+  <p class="sub">What's happening in the village right now</p>
+  <div class="g4">
+    <div class="gc"><div class="ic g-cal">📅</div><b style="color:#9333ea" id="n-gather">0</b><span>Gatherings coming up</span></div>
+    <div class="gc pink"><div class="ic g-help">🤲</div><b style="color:#e11d48" id="n-help">0</b><span>Support requests</span></div>
+    <div class="gc"><div class="ic g-don">🛍</div><b style="color:#16a34a" id="n-mkt">8</b><span>Marketplace listings</span></div>
+    <div class="gc"><div class="ic g-people">👥</div><b style="color:#f97316" data-count="500" data-suffix="+">500+</b><span>Village members</span></div>
+  </div>
+</div></section>
+
+<section class="band" id="quick"><div class="wrap center">
+  <span class="eyebrow">Quick Access</span>
+  <h2>Everything Your<br><span class="h2o">Village Needs</span></h2>
+  <p class="sub">Community features at your fingertips</p>
+  <div class="qgrid">
+    <button class="qc" data-board="help"><div class="ic g-help">⚠️</div><b>Ask for Help</b><small>Post a need to the village</small></button>
+    <button class="qc" data-board="gathering"><div class="ic g-cal">📅</div><b>Community Events</b><small>Meet-ups &amp; gatherings</small></button>
+    <button class="qc" data-board="donation"><div class="ic g-don">＄</div><b>Donations/Support</b><small>Give or receive support</small></button>
+    <button class="qc" data-board="swap"><div class="ic g-swap">🚌</div><b>Childcare Swaps</b><small>Share childcare with members</small></button>
+    <button class="qc" data-board="resource"><div class="ic g-res">📄</div><b>Resources</b><small>Guides &amp; helpful links</small></button>
+    <button class="qc" data-board="member"><div class="ic g-mem">👥</div><b>Member Profiles</b><small>Connect with families</small></button>
+    <a class="qc" href="#news"><div class="ic g-upd">🏢</div><b>Village Updates</b><small>News &amp; announcements</small></a>
+    <a class="qc" href="#support" style="background:#f3e7ea"><div class="ic g-emg">📞</div><b>Emergency Support</b><small>24/7 community help</small></a>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap center">
+  <span class="eyebrow soft">The Village Hub</span>
+  <h2>Everything Your Village<br><span class="h2o">Needs, Together</span></h2>
+  <p class="sub">Community features built for single parents across Zimbabwe</p>
+  <div class="hub">
+    <button class="hc" data-board="help"><div class="ic g-help">🤲</div><h3>Ask for Help</h3><p>Post a need — the village responds</p><span class="ex">Explore →</span></button>
+    <button class="hc" data-board="gathering"><div class="ic g-cal">📅</div><h3>Parenting Gatherings</h3><p>Meet-ups, playdates &amp; workshops</p><span class="ex">Explore →</span></button>
+    <button class="hc" data-board="donation"><div class="ic g-don">🎁</div><h3>Donations &amp; Support</h3><p>Give or receive community support</p><span class="ex">Explore →</span></button>
+    <button class="hc" data-board="swap"><div class="ic g-swap">☺</div><h3>Childcare Swaps</h3><p>Share childcare with trusted members</p><span class="ex">Explore →</span></button>
+    <button class="hc" data-board="resource"><div class="ic g-res">📖</div><h3>Resources</h3><p>Parenting guides &amp; helpful links</p><span class="ex">Explore →</span></button>
+    <button class="hc" data-board="member"><div class="ic g-mem">👤</div><h3>Member Profiles</h3><p>Connect with families near you</p><span class="ex">Explore →</span></button>
+    <a class="hc" href="#news"><div class="ic g-upd">📣</div><h3>Village Updates</h3><p>Community news &amp; announcements</p><span class="ex">Explore →</span></a>
+    <a class="hc" href="#listings"><div class="ic g-mkt">🛍</div><h3>Marketplace</h3><p>Jobs, housing &amp; community listings</p><span class="ex">Explore →</span></a>
+  </div>
+</div></section>
+
+<main id="listings">
+  <div class="hero">
+    <span class="eyebrow soft">Village Marketplace</span>
+    <h1>Deals Near You</h1>
+    <p>Jobs, housing, and community spaces across Harare, Bulawayo &amp; Mutare</p>
+  </div>
+  <div class="panel">
+    <input class="search" id="q" placeholder="🔍  Search listings...">
+    <div class="chips" id="cities"></div>
+    <div class="chips" id="cats"></div>
+    <div style="margin-top:16px"><button class="btn" id="post">＋ Post a Listing</button></div>
+  </div>
+  <div class="cats" id="catcards"></div>
+  <div class="list" id="list"></div>
+  <div class="count" id="count"></div>
+</main>
+
+<section class="band" id="news" style="background:#f9fafb">
+  <div class="wrap center">
+    <span class="pill">Community News</span>
+    <h2>Community News &amp; Tips</h2>
+    <p class="sub">Parenting advice, community stories, and updates for single parents</p>
+    <div class="news" id="newslist"></div>
+    <p class="note">News updates automatically every 30 minutes</p>
+    <button class="refresh" id="refresh"><span>⟳</span> Refresh News Now</button>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <div class="wrap center">
+    <div class="sic" style="background:linear-gradient(135deg,#c2570c,#8f3d08);border-radius:50%">📞</div>
+    <h2>Need Support?<br>We're Here For You</h2>
+    <p class="sub">Reach out to the village — community coordinators are ready to help</p>
+    <div class="sgrid">
+      <div class="scard"><div class="sic b-call">📞</div><h3>Emergency Support</h3><p>Call our community helpline for urgent needs</p><a class="btn b-call" id="callnow" href="#">Call Now</a></div>
+      <div class="scard"><div class="sic b-wa">💬</div><h3>WhatsApp Group</h3><p>Join our village WhatsApp community group</p><a class="btn b-wa" id="wa" href="#">Join Group</a></div>
+      <div class="scard"><div class="sic b-mail">✉️</div><h3>Email the Village</h3><p>Send us a message and we'll respond soon</p><a class="btn b-mail" id="mail" href="#">Send Email</a></div>
+      <div class="scard left"><div style="font-size:42px;color:#d4620f">🕒</div><h3>Community Hours</h3><p>Our volunteer coordinators are available Monday–Saturday, 8am–8pm. Emergency line is 24/7.</p></div>
+      <div class="scard left"><div style="font-size:42px;color:#d4620f">📍</div><h3>Our Cities</h3><p>Active community groups in Harare, Bulawayo, and Mutare. Find your nearest village hub.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="stats">
+  <div class="wrap center">
+    <h2>Rudo Roots by the Numbers</h2>
+    <p class="sub">A thriving community of single parents lifting each other up</p>
+    <div class="stats">
+      <div class="stat"><div class="ic" style="background:linear-gradient(135deg,#e07a2e,#eab030)">👥</div><b data-count="500" data-suffix="+">500+</b><span>Village Members</span></div>
+      <div class="stat"><div class="ic" style="background:linear-gradient(135deg,#f43f5e,#ec4899)">♥</div><b data-count="1200" data-suffix="+">1,200+</b><span>Acts of Support</span></div>
+      <div class="stat"><div class="ic" style="background:linear-gradient(135deg,#f59e0b,#facc15)">☺</div><b data-count="800" data-suffix="+">800+</b><span>Children Supported</span></div>
+      <div class="stat"><div class="ic" style="background:linear-gradient(135deg,#14b8a6,#22c55e)">🤝</div><b data-count="3">3</b><span>Cities Connected</span></div>
+    </div>
+    <div class="join" id="join">
+      <h2 style="margin-top:0">Join The Village</h2>
+      <p>You don't have to do it alone. Rudo Roots is here — a village of parents who understand your journey.</p>
+      <a class="btn" href="#listings">Find a Gathering</a><br>
+      <a class="btn o" href="#support">Ask for Help</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div><h4>Community</h4><a href="#listings">Parenting Gatherings</a><a href="#support">Support Requests</a><a href="#news">Village Updates</a><a href="#stats">Member Profiles</a></div>
+      <div><h4>Resources</h4><a href="#listings">Childcare Swaps</a><a href="#support">Donations &amp; Support</a><a href="#news">Community Events</a><a href="#support">Ask for Help</a></div>
+      <div><h4>About</h4><a href="#stats">Our Mission</a><a href="#join">How It Works</a><a href="#join">Join The Village</a><a href="#news">Community News</a></div>
+      <div><h4>Contact</h4><a href="#support">📞 Emergency Support</a><span>Harare, Zimbabwe</span><br><span>Rudo Roots Community</span></div>
+    </div>
+    <div class="c">© <span id="yr"></span> The Village: Rudo Roots. All rights reserved.<br><a href="privacy.html" style="display:inline;margin:8px">Privacy Policy</a><a href="#" style="display:inline;margin:8px">Community Guidelines</a><a href="#" style="display:inline;margin:8px">Terms</a></div>
+  </div>
+</footer>
+
+<dialog id="dlg">
+  <form id="form" method="dialog">
+    <h3 style="margin:0 0 4px;font-size:24px">Post a Listing</h3>
+    <small>Listings appear after the Village team approves them.</small>
+    <label>Title</label><input name="title" required maxlength="90">
+    <label>Category</label><select name="category"><option value="jobs">Jobs &amp; Piece Work</option><option value="housing">Housing</option><option value="community">Churches &amp; Community</option></select>
+    <label>City</label><select name="city"><option>Harare</option><option>Bulawayo</option><option>Mutare</option></select>
+    <label>Description</label><textarea name="description" rows="3" required maxlength="400"></textarea>
+    <label>Price (e.g. $50/week, Free)</label><input name="price" maxlength="30">
+    <label>Your name</label><input name="contact_name" required maxlength="40">
+    <label>Phone / WhatsApp</label><input name="phone" required inputmode="tel" placeholder="+2637...">
+    <div class="row" style="margin-top:18px"><button class="btn" type="submit">Submit</button><button class="chip" type="button" id="cancel">Cancel</button></div>
+    <div class="msg" id="msg"></div>
+  </form>
+</dialog>
+
+
+<dialog id="board">
+  <h3 id="bt" style="margin:0 0 2px;font-size:24px"></h3>
+  <small id="bb" style="color:#6b7280"></small>
+  <div id="bl" style="margin:14px 0;max-height:34vh;overflow:auto"></div>
+  <form id="bform" method="dialog">
+    <b>Add yours</b>
+    <label>Title</label><input name="title" required maxlength="90">
+    <label>Details</label><textarea name="body" rows="3" required maxlength="400"></textarea>
+    <label>City</label><select name="city"><option>Harare</option><option>Bulawayo</option><option>Mutare</option></select>
+    <label>Your name</label><input name="contact_name" required maxlength="40">
+    <label>Phone / WhatsApp</label><input name="phone" required inputmode="tel" placeholder="+2637...">
+    <div class="row" style="margin-top:16px"><button class="btn" type="submit">Submit</button><button class="chip" type="button" id="bclose">Close</button></div>
+    <div class="msg" id="bmsg"></div>
+  </form>
+</dialog>
+<script>
+/* ===== SETTINGS: edit these ===== */
+const CONFIG = {
+  SUPABASE_URL: "",      // e.g. https://xxxx.supabase.co  (leave "" to use sample data only)
+  SUPABASE_ANON_KEY: "", // anon public key
+  HELPLINE: "",          // e.g. +263712000000
+  WHATSAPP_LINK: "",     // e.g. https://chat.whatsapp.com/XXXX
+  EMAIL: "",             // e.g. hello@yourdomain.co.zw
+  HERO_IMAGE: ""         // optional: "hero.jpg" (upload the photo next to index.html)
+};
+/* ================================ */
+const CITIES=["Harare","Bulawayo","Mutare"];
+const CATS={jobs:"Jobs & Piece Work",housing:"Housing",community:"Churches & Community"};
+const ICON={jobs:"💼",housing:"🏠",community:"⛪"};
+let listings=[
+ {title:"House Helper / Maid needed in Borrowdale",category:"jobs",city:"Harare",description:"Looking for a reliable house helper, Monday to Friday, light duties, cooking and childcare...",price:"$50/week",contact_name:"Chipo",phone:"+263712000001"},
+ {title:"Single Room to Rent — Mutare Town",category:"housing",city:"Mutare",description:"Clean single room available immediately near Mutare town center. Shared kitchen, water included.",price:"$40/month",contact_name:"Rutendo",phone:"+263714000005"},
+ {title:"3-Room House for Rent — Suburbs",category:"housing",city:"Mutare",description:"Spacious 3-room house in a safe suburb. Has garden, borehole water. Ideal for a single parent with children.",price:"$120/month",contact_name:"Farai",phone:"+263714000008"},
+ {title:"Grace Fellowship — Single Parents Support Group",category:"community",city:"Harare",description:"Monthly support group for single parents, counseling sessions, and community dinners. All are welcome.",price:"Free",contact_name:"Rev. Chinyama",phone:"+263712000007"},
+ {title:"New Life Community Church — Family Services",category:"community",city:"Bulawayo",description:"Welcoming church offering Sunday family services, children's programs, and community meals for families.",price:"Free",contact_name:"Pastor Moyo",phone:"+263713000004"},
+ {title:"Childminder Available — Highlands Area",category:"jobs",city:"Harare",description:"Experienced childminder available to care for children aged 1–8 years. References available.",price:"$10/day",contact_name:"Gracious",phone:"+263712000006"},
+ {title:"2 Bedroom Cottage for Rent — Avondale",category:"housing",city:"Harare",description:"Secure and affordable 2-bedroom cottage in quiet Avondale neighborhood. Perfect for a small family.",price:"$180/month",contact_name:"Tendai",phone:"+263712000002"},
+ {title:"Piece Work — Garden & Yard Maintenance",category:"jobs",city:"Bulawayo",description:"Available weekends for garden work, lawn mowing, and general yard upkeep.",price:"$15/day",contact_name:"Sipho",phone:"+263713000003"}
+];
+let news=[
+ {tag:"Resources",source:"Zimbabwe Family Network",date:"2026-03-28",title:"New Rerai Umntwana App: Parenting Advice in Your Pocket",excerpt:"The Ministry of Health and Child Care has launched the Rerai Umntwana app to provide Zimbabwean caregivers with evidence-based guidance on early childhood care and development.",url:"#"},
+ {tag:"Events",source:"Rudo Roots Community",date:"2026-10-05",title:"Bulawayo Single Parents Forum: Building Resilience Together",excerpt:"Join us at the Theological College of Zimbabwe on October 17 for a supportive gathering dedicated to single parents. This forum brings together families to share experiences and practical support.",url:"#"},
+ {tag:"Support",source:"Rudo Roots Community",date:"2026-11-10",title:"Affordable Nutrition: Cooking Tips for Busy Parents",excerpt:"Learn how to combine locally available foods to create balanced, nutritious meals for your children without breaking the bank. Our community cooks share their best tips.",url:"#"},
+ {tag:"Jobs",source:"Village Herald",date:"2026-08-20",title:"Community Gardens Offer New Livelihood Opportunities in Mutare",excerpt:"Solar-powered community gardens in Mutare are providing a vital lifeline for families, allowing for year-round crop production and a steady income.",url:"#"},
+ {tag:"Housing",source:"Zimbabwe Family Network",date:"2026-05-25",title:"Finding Safe Housing: Navigating Support Systems",excerpt:"For single parents facing housing instability, it is important to know that community-led support networks are available to help you find safe, affordable accommodation.",url:"#"},
+ {tag:"Community",source:"Rudo Roots Community",date:"2026-09-15",title:"Prioritizing Mental Health: Why Self-Care is Essential",excerpt:"Parenting alone is a demanding task that requires immense strength, but remember that your well-being is just as important as your children's.",url:"#"}
+];
+let fCity="All",fCat="all",q="";
+const $=s=>document.querySelector(s), esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const sb=CONFIG.SUPABASE_URL&&CONFIG.SUPABASE_ANON_KEY;
+const H={apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:"Bearer "+CONFIG.SUPABASE_ANON_KEY,"Content-Type":"application/json"};
+async function load(){
+  if(!sb)return;
+  try{
+    const l=await fetch(CONFIG.SUPABASE_URL+"/rest/v1/listings?approved=eq.true&order=created_at.desc",{headers:H}).then(r=>r.json());
+    if(Array.isArray(l)&&l.length)listings=l;
+    const n=await fetch(CONFIG.SUPABASE_URL+"/rest/v1/news?order=published.desc",{headers:H}).then(r=>r.json());
+    if(Array.isArray(n)&&n.length)news=n.map(x=>({...x,date:x.published}));
+  }catch(e){console.warn(e)}
+}
+function render(){
+  $("#cities").innerHTML='<span style="color:var(--brand)">⛉</span>'+["All",...CITIES].map(c=>`<button class="chip ${fCity===c?"on":""}" data-city="${c}">${c==="All"?"📍 All Cities":c}</button>`).join("");
+  $("#cats").innerHTML=[["all","All"],...Object.entries(CATS)].map(([k,v])=>`<button class="chip dark ${fCat===k?"on":""}" data-cat="${k}">${v}</button>`).join("");
+  $("#catcards").innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="cat ${fCat===k?"sel":""}" data-cat="${k}"><div class="ic ${k}">${ICON[k]}</div><b>${v}</b><small>${listings.filter(l=>l.category===k).length} listings</small></button>`).join("");
+  const rows=listings.filter(l=>(fCity==="All"||l.city===fCity)&&(fCat==="all"||l.category===fCat)&&(!q||(l.title+l.description+l.city).toLowerCase().includes(q)));
+  $("#list").innerHTML=rows.map(l=>`<article class="card"><div class="top"><div class="ic ${l.category}">${ICON[l.category]}</div><div><h3>${esc(l.title)}</h3><span class="tag t-${l.category}">${CATS[l.category]}</span><span class="tag c-${l.city}">📍 ${l.city}</span></div></div><p>${esc(l.description)}</p><div class="row"><span class="price">$ ${esc((l.price||"").replace(/^\$/,""))}</span><span style="color:#6b7280">👤 ${esc(l.contact_name)}</span></div><div style="margin-top:10px"><a class="phone" href="tel:${esc(l.phone)}">📞 ${esc(l.phone)}</a></div></article>`).join("")||'<p class="count">No listings match yet.</p>';
+  $("#count").textContent=`Showing ${rows.length} listings across ${fCity==="All"?"all cities":fCity}`;
+  $("#newslist").innerHTML=news.map(n=>`<article class="ncard"><div class="nimg c-${esc((n.tag||"").toLowerCase())}" style="${n.image?`--img:url(${esc(n.image)})`:""}"><span class="a">${esc(n.tag)}</span><span class="b">${esc(n.source)}</span></div><div class="nbody"><div class="date">📅 ${new Date(n.date).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})}</div><h3>${esc(n.title)}</h3><p>${esc(n.excerpt)}</p><a href="${esc(n.url||"#")}" target="_blank" rel="noopener">Read full article ↗</a></div></article>`).join("");
+}
+document.addEventListener("click",e=>{
+  const c=e.target.closest("[data-city]"),k=e.target.closest("[data-cat]");
+  if(c){fCity=c.dataset.city;render()}
+  if(k){fCat=fCat===k.dataset.cat&&k.classList.contains("cat")?"all":k.dataset.cat;render()}
+});
+$("#q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();render()});
+const dOpen=o=>{$("#drawer").classList.toggle("on",o);$("#scrim").classList.toggle("on",o)};
+$("#burger").onclick=()=>dOpen(true);$("#dclose").onclick=()=>dOpen(false);$("#scrim").onclick=()=>dOpen(false);
+$("#drawer").addEventListener("click",e=>{if(e.target.closest("a"))dOpen(false)});
+$("#post").onclick=()=>{$("#msg").textContent="";$("#dlg").showModal()};
+$("#cancel").onclick=()=>$("#dlg").close();
+$("#form").onsubmit=async e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(e.target));
+  if(!sb){$("#msg").textContent="Saved for preview only — connect Supabase to receive real submissions.";return}
+  const r=await fetch(CONFIG.SUPABASE_URL+"/rest/v1/listings",{method:"POST",headers:{...H,Prefer:"return=minimal"},body:JSON.stringify({...d,approved:false})});
+  $("#msg").textContent=r.ok?"Thank you! Your listing will appear once approved.":"Something went wrong. Please try again.";
+  if(r.ok)e.target.reset();
+};
+
+const BOARDS={
+ help:{t:"Ask for Help",b:"Post a need — the village responds"},
+ gathering:{t:"Parenting Gatherings",b:"Meet-ups, playdates & workshops"},
+ donation:{t:"Donations & Support",b:"Give or receive community support"},
+ swap:{t:"Childcare Swaps",b:"Share childcare with trusted members"},
+ resource:{t:"Resources",b:"Parenting guides & helpful links"},
+ member:{t:"Member Profiles",b:"Connect with families near you"}
+};
+let posts=[],curBoard="help";
+async function loadPosts(){
+  if(!sb)return;
+  try{const r=await fetch(CONFIG.SUPABASE_URL+"/rest/v1/posts?approved=eq.true&order=created_at.desc",{headers:H}).then(r=>r.json());if(Array.isArray(r))posts=r}catch(e){}
+}
+function counts(){
+  $("#n-gather").textContent=posts.filter(p=>p.type==="gathering").length;
+  $("#n-help").textContent=posts.filter(p=>p.type==="help").length;
+  $("#n-mkt").textContent=listings.length;
+}
+function openBoard(t){
+  curBoard=t;const B=BOARDS[t];$("#bt").textContent=B.t;$("#bb").textContent=B.b;$("#bmsg").textContent="";
+  const rows=posts.filter(p=>p.type===t);
+  $("#bl").innerHTML=rows.map(p=>`<div class="post"><b>${esc(p.title)}</b><div>${esc(p.body)}</div><small>📍 ${esc(p.city)} · 👤 ${esc(p.contact_name)} · <a href="tel:${esc(p.phone)}">${esc(p.phone)}</a></small></div>`).join("")||'<p style="color:#6b7280">Nothing here yet — be the first to post.</p>';
+  $("#board").showModal();
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-board]");if(b){e.preventDefault();dOpen(false);openBoard(b.dataset.board)}});
+$("#bclose").onclick=()=>$("#board").close();
+$("#bform").onsubmit=async e=>{
+  e.preventDefault();const d=Object.fromEntries(new FormData(e.target));
+  if(!sb){$("#bmsg").textContent="Preview only — connect Supabase to receive real posts.";return}
+  const r=await fetch(CONFIG.SUPABASE_URL+"/rest/v1/posts",{method:"POST",headers:{...H,Prefer:"return=minimal"},body:JSON.stringify({...d,type:curBoard,approved:false})});
+  $("#bmsg").textContent=r.ok?"Thank you! It will appear once approved.":"Something went wrong. Please try again.";
+  if(r.ok)e.target.reset();
+};
+$("#vsearch").onsubmit=e=>{e.preventDefault();q=$("#vq").value.trim().toLowerCase();$("#q").value=$("#vq").value;fCity="All";fCat="all";render();document.getElementById("listings").scrollIntoView()};
+
+/* ===== ANIMATION ENGINE ===== */
+if(CONFIG.HERO_IMAGE)document.querySelector(".vhero").style.setProperty("--hero-img",`url(${CONFIG.HERO_IMAGE})`);
+const fmt=(n)=>n>=1000?n.toLocaleString("en-US"):String(n);
+function countUp(el){
+  const to=+el.dataset.count,suf=el.dataset.suffix||"",t0=performance.now(),dur=1600;
+  const step=t=>{const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(to*e))+(k<1?"":suf);if(k<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);
+}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll?.("[data-count]").forEach(countUp);if(e.target.dataset.count)countUp(e.target);io.unobserve(e.target)}}),{threshold:.15});
+function armReveal(){
+  document.querySelectorAll(".gc,.qc,.hc,.card,.ncard,.scard,.stat,.cat,.join,.eyebrow,.band h2,.glance h2,.sub,.hero,.panel,.support h2,.sic").forEach(el=>{
+    if(el.dataset.armed||el.closest(".vhero"))return;el.dataset.armed=1;
+    const sibs=[...el.parentElement.children];const i=sibs.indexOf(el);
+    el.style.setProperty("--d",(Math.min(i,6)*.09)+"s");el.classList.add("rv");io.observe(el);
+  });
+  document.querySelectorAll(".hstats b[data-count]").forEach(b=>setTimeout(()=>countUp(b),1100));
+}
+const _render=render;render=function(){_render();armReveal();spot()};
+render();
+addEventListener("scroll",()=>document.querySelector("header").classList.toggle("scrolled",scrollY>10),{passive:true});
+
+/* ===== spotlight: highlight the card nearest the middle of the screen ===== */
+function spot(){
+  const mid=innerHeight/2;
+  document.querySelectorAll(".qgrid,.hub,.g4,#list,#newslist").forEach(box=>{
+    let best=null,bd=1e9;
+    [...box.children].forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const d=Math.abs((r.top+r.bottom)/2-mid);if(d<bd-1){bd=d;best=el}});
+    [...box.children].forEach(el=>el.classList.toggle("active",el===best&&bd<innerHeight*.34));
+  });
+}
+/* hero particles */
+(function(){const w=document.getElementById("pts");if(!w)return;
+  for(let i=0;i<24;i++){const e=document.createElement("i");
+    e.style.cssText=`--x:${Math.random()*100}%;--y:${Math.random()*100}%;--s:${2+Math.random()*5}px;--tm:${6+Math.random()*8}s;--dl:${-Math.random()*10}s;--dx:${(Math.random()-.5)*60}px`;w.appendChild(e)}})();
+/* scroll: hero fades + drifts away, cards spotlight */
+let tick=false;
+function onScroll(){
+  if(tick)return;tick=true;
+  requestAnimationFrame(()=>{
+    tick=false;
+    const h=document.querySelector(".vhero"),p=Math.min(1,Math.max(0,scrollY/(h.offsetHeight*.75)));
+    h.style.setProperty("--ho",1-p*1.15);h.style.setProperty("--hy",(-p*50)+"px");h.style.setProperty("--hs",1-p*.06);
+    spot();
+  });
+}
+addEventListener("scroll",onScroll,{passive:true});addEventListener("resize",onScroll);
+setTimeout(spot,300);
+/* news auto-refresh every 30 min + button */
+async function refreshNews(){
+  const b=$("#refresh");b.classList.add("spin");
+  await load();render();
+  setTimeout(()=>b.classList.remove("spin"),900);
+}
+$("#refresh").onclick=refreshNews;
+setInterval(refreshNews,30*60*1000);
+if(CONFIG.HELPLINE)$("#callnow").href="tel:"+CONFIG.HELPLINE;
+if(CONFIG.WHATSAPP_LINK)$("#wa").href=CONFIG.WHATSAPP_LINK;
+if(CONFIG.EMAIL)$("#mail").href="mailto:"+CONFIG.EMAIL;
+$("#yr").textContent=new Date().getFullYear();
+render();counts();Promise.all([load(),loadPosts()]).then(()=>{render();counts()});
+</script>
+</body>
+</html>
